@@ -10,7 +10,7 @@ import Cocoa
 
 class CollectionViewItem: NSCollectionViewItem {
 
-    @IBOutlet weak var numberLabel: NSTextField!
+    @IBOutlet weak var numberLabel: NSTextField! // The label which will change depending on our data.
     
     override func viewDidLoad() {
         super.viewDidLoad()
