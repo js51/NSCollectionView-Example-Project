@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,11 +13,11 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="Hz6-mo-xeY">
+        <customView wantsLayer="YES" id="Hz6-mo-xeY" customClass="CollectionViewItemView" customModule="NSCollectionViewExample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="F8z-UJ-Bsi">
+                <box wantsLayer="YES" fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="F8z-UJ-Bsi">
                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="EaG-8L-4nU">
@@ -43,11 +43,11 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Eo-Ho-2uv">
-                                <rect key="frame" x="20" y="-1" width="60" height="32"/>
+                                <rect key="frame" x="19" y="-1" width="60" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="GO" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="e1z-Gf-vns">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="message"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="doSomething:" target="1Bd-VD-eI1" id="KrR-2k-3Oe"/>
@@ -57,10 +57,14 @@
                     </view>
                 </box>
             </subviews>
+            <connections>
+                <outlet property="button" destination="4Eo-Ho-2uv" id="JhD-9n-qUl"/>
+            </connections>
             <point key="canvasLocation" x="-25" y="83"/>
         </customView>
         <customObject id="1Bd-VD-eI1" customClass="CollectionViewItem" customModule="NSCollectionViewExample" customModuleProvider="target">
             <connections>
+                <outlet property="box" destination="F8z-UJ-Bsi" id="tc9-uk-BeW"/>
                 <outlet property="numberLabel" destination="IOp-ne-Pzq" id="p5H-mN-cCB"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="xcm-na-7ti"/>
             </connections>
